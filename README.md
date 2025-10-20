@@ -1,6 +1,8 @@
 # bin
 dump/check
 - ms aws unfin j.p-outlook A47..12@@
+- PRN : $\texttt{\`2830 5648 7965 3682\`}$
+- 
 
 # links
 
