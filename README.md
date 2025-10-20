@@ -1,13 +1,11 @@
 # bin
-dump-check
+dump/check
+- ms aws unfin j.p-outlook A47..12@@
 
+# links
 
-# re-link
-
-:: re
-
-1. ms aws unfin j.p-outlook A47..12@@
-2. [GitHub](https://github.com) - Explore open-source projects and code.
-3. [Wikipedia](https://www.wikipedia.org) - Free online encyclopedia.
-4. [Stack Overflow](https://stackoverflow.com) - Ask and answer programming questions.
-5. [BBC News](https://www.bbc.com/news) - Latest global news and headlines.
+1. [web dev 1](/bin/webdev1) - 1Year_HE_SEC2_Web_Development_1_SY25-26_S2
+2. 
+3. 
+4. 
+5. 
