@@ -6,8 +6,8 @@ dump/check
 
 # links
 
-1. [web dev 1 demo site](/bin/webdev1/) - `1Year_HE_SEC2_Web_Development_1_SY25-26_S2`
-2. 
+1. [Module 2 Homework (ION)](https://docs.google.com/document/d/e/2PACX-1vQZ7rF2f_YLHevnMUim7-ei3EAPLpotWaV3DyYaupXsiZFHSNLKuFmu-COu0kkVLFgI5ZVM5KmlNBmZ/pub)
+2. [web dev 1 demo site](https://halangdon.github.io/bin/webdev1/) - `1Year_HE_SEC2_Web_Development_1_SY25-26_S2`
 3. 
 4. 
 5. 
