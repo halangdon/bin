@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+</head>
+<body>
+<p>Your task is to write <strong>a simple program which pretends to play <i>tic-tac-toe</i> with the user</strong>. To make it all easier for you, we've decided to simplify the game. Here are our assumptions:</p>
+<ul>
+<li>the computer (i.e., your program) should play the game using <codel>'X'</codel>s;</li>
+<li>the user (e.g., you) should play the game using <codel>'O'</codel>s;</li>
+<li>the first move belongs to the computer − it always puts its first <codel>'X'</codel> in the middle of the board;</li>
+<li>all the squares are numbered row by row starting with <codel>1</codel> (see the example session below for reference)</li>
+<li>the user inputs their move by entering the number of the square they choose − the number must be valid, i.e., it must be an integer, it must be greater than <codel>0</codel> and less than <codel>10</codel>, and it cannot point to a field which is already occupied;</li>
+<li>the program checks if the game is over − there are four possible verdicts: the game should continue, the game ends with a tie, you win, or the computer wins;</li>
+<li>the computer responds with its move and the check is repeated;</li>
+<li>don't implement any form of artificial intelligence − a random field choice made by the computer is good enough for the game.</li>
+</ul>
+<p>The example session with the program may look as follows:</p>
+
+<h1>MOVE</h1>
+
+<style>
+/* Custom style for the console/code block */
+.w3-code-console {
+    font-family: 'Consolas', 'monaco', monospace; /* Monospace font is key for text-based art */
+    white-space: pre; /* Essential for preserving the Tic-Tac-Toe grid structure */
+    overflow-x: auto; /* Adds scrollbar if the content is too wide */
+    padding: 16px;
+    border-left: 5px solid #4CAF50; /* Green border to mimic an active terminal */
+    background-color: #212121; /* Dark background */
+    color: #E0E0E0; /* Light text color */
+}
+
+/* Optional: Highlight the "You won!" message */
+.w3-code-console .win-message {
+    color: #4CAF50; /* Green color for win message */
+    font-weight: bold;
+}
+
+/* Styling for the original span tags (if you keep them) */
+.w3-code-console span {
+    display: block; /* Makes each line a separate block */
+}
+
+/* Custom classes to replicate the structure without the original framework's odd elements */
+.code__wrapper {
+    max-width: 600px; /* Constrain width for better presentation */
+    margin: auto; /* Center the wrapper */
+}
+
+</style>
+
+
+<div class="w3-container w3-margin-top">
+    <h2>Tic-Tac-Toe Console Game Log</h2>
+
+    <div class="code__wrapper">
+        <pre class="w3-code-console w3-round-large">
++-------+-------+-------+
+|       |       |       |
+|   1   |   2   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   4   |   X   |   6   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   8   |   9   |
+|       |       |       |
++-------+-------+-------+
+Enter your move: 1
++-------+-------+-------+
+|       |       |       |
+|   O   |   2   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   4   |   X   |   6   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   8   |   9   |
+|       |       |       |
++-------+-------+-------+
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   4   |   X   |   6   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   8   |   9   |
+|       |       |       |
++-------+-------+-------+
+Enter your move: 8
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   4   |   X   |   6   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   O   |   9   |
+|       |       |       |
++-------+-------+-------+
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   4   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   O   |   9   |
+|       |       |       |
++-------+-------+-------+
+Enter your move: 4
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   3   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   O   |   9   |
+|       |       |       |
++-------+-------+-------+
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   7   |   O   |   9   |
+|       |       |       |
++-------+-------+-------+
+Enter your move: 7
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   O   |   X   |   X   |
+|       |       |       |
++-------+-------+-------+
+|       |       |       |
+|   O   |   O   |   9   |
+|       |       |       |
++-------+-------+-------+
+<span class="win-message">You won!</span>
+        </pre>
+    </div>
+
+</div>
+
+<hr/>
+<h2>Requirements</h2>
+<p>Implement the following features:</p>
+
+<ul>
+<li>the board should be stored as a three-element list, while each element is another three-element list (the inner lists represent rows) so that all of the squares may be accessed using the following syntax:</li>
+</ul>
+
+<pre>board[row][column]</pre>
+
+<ul>
+<li>each of the inner list's elements can contain <codel>'O'</codel>, <codel>'X'</codel>, or a digit representing the square's number (such a square is considered free)</li>
+
+<li>the board's appearance should be exactly the same as the one presented in the example.</li>
+
+<li>implement the functions defined for you in the editor.</li>
+</ul>
+
+<p>Drawing a random integer number can be done by utilizing a Python function called <codel>randrange()</codel>. The example program below shows how to use it (the program prints ten random numbers from 0 to 8).</p>
+
+
+<p>Note: the <codel>from-import</codel> instruction provides access to the <codel>randrange</codel> function defined within an external Python module callled <codel>random</codel>.</p>
+
+
+<pre>
+<code>from random import randrange
+for i in range(10):
+    print(randrange(8))
+</code></pre>
+
+<h1>Final Code</h1>
+<h3>Features:</h2>
+<ul><li>
+✅ Game shows “Computer’s turn…” message</li><li>
+✅ 1-second delay before the computer move (adjustable or removable)</li><li>
+✅ Replay option with a clean reset</li><li>
+✅ Properly formatted board every time</li><li>
+✅ Prevents invalid or duplicate moves</li><li>
+✅ Declares win / lose / tie clearly</li></ul>
+
+<style>
+    body { background: #f7fafc; font-family: "Segoe UI", Roboto, Arial, sans-serif; padding: 24px; }
+    .card { max-width: 900px; margin: 0 auto; }
+    .code-wrap { overflow: auto; white-space: pre; }
+    /* Slightly larger font for code */
+    .w3-code { font-size: 14px; line-height: 1.45; }
+  </style>
+  
+  <div class="w3-card-4 w3-white card">
+    <header class="w3-container w3-blue">
+      <h3>Tic-Tac-Toe — Final Code (with Replay + Computer Turn Notice)</h3>
+    </header>
+
+    <div class="w3-container">
+      <p class="w3-text-grey">Copy the Python program below and run it in your Python 3 environment.</p>
+
+      <div class="w3-panel w3-light-grey w3-leftbar w3-border-blue code-wrap">
+        <pre class="w3-code python">
+from random import randrange
+import time
+
+def display_board(board):
+    print("+-------" * 3, "+", sep="")
+    for row in range(3):
+        print("|       " * 3, "|", sep="")
+        for col in range(3):
+            print("|   " + str(board[row][col]) + "   ", end="")
+        print("|")
+        print("|       " * 3, "|", sep="")
+        print("+-------" * 3, "+", sep="")
+
+def enter_move(board):
+    ok = False
+    while not ok:
+        move = input("Enter your move: ")
+        ok = move.isdigit() and 1 <= int(move) <= 9
+        if not ok:
+            print("Bad move - repeat your input!")
+            continue
+
+        move = int(move) - 1
+        row = move // 3
+        col = move % 3
+        sign = board[row][col]
+        ok = sign not in ['O', 'X']
+        if not ok:
+            print("Field already occupied - repeat your input!")
+            continue
+
+    board[row][col] = 'O'
+
+def make_list_of_free_fields(board):
+    free = []
+    for row in range(3):
+        for col in range(3):
+            if board[row][col] not in ['O', 'X']:
+                free.append((row, col))
+    return free
+
+def victory_for(board, sgn):
+    if sgn == "X":
+        who = 'me'
+    elif sgn == "O":
+        who = 'you'
+    else:
+        who = None
+
+    # Check rows and columns
+    for rc in range(3):
+        if all(board[rc][c] == sgn for c in range(3)):
+            return who
+        if all(board[r][rc] == sgn for r in range(3)):
+            return who
+
+    # Check diagonals
+    if all(board[i][i] == sgn for i in range(3)) or all(board[i][2 - i] == sgn for i in range(3)):
+        return who
+
+    return None
+
+def draw_move(board):
+    free = make_list_of_free_fields(board)
+    cnt = len(free)
+    if cnt > 0:
+        this = randrange(cnt)
+        row, col = free[this]
+        board[row][col] = 'X'
+
+def play_game():
+    board = [[3 * j + i + 1 for i in range(3)] for j in range(3)]
+    board[1][1] = 'X'  # Computer starts in the center
+
+    victor = None
+    display_board(board)
+
+    while True:
+        # --- Player move ---
+        enter_move(board)
+        display_board(board)
+        victor = victory_for(board, 'O')
+        if victor is not None:
+            break
+
+        free = make_list_of_free_fields(board)
+        if not free:
+            break
+
+        # --- Computer move ---
+        print("Computer's turn...")
+        time.sleep(1)  # small delay for realism
+        draw_move(board)
+        display_board(board)
+        victor = victory_for(board, 'X')
+        if victor is not None:
+            break
+
+        free = make_list_of_free_fields(board)
+        if not free:
+            break
+
+    # --- Game over ---
+    if victor == 'you':
+        print("You won!")
+    elif victor == 'me':
+        print("I won!")
+    else:
+        print("It's a tie!")
+
+# --- Main loop (replay feature) ---
+while True:
+    play_game()
+    again = input("Play again? (y/n): ").strip().lower()
+    if again != 'y':
+        print("Thanks for playing! Goodbye.")
+        break
+    print("\nStarting a new game...\n")
+        </pre>
+      </div>
+
+      <p class="w3-small w3-text-grey">Tip: remove the <code>time.sleep(1)</code> line if you don't want the delay before the computer move.</p>
+    </div>
+
+    <footer class="w3-container w3-light-grey">
+      <p class="w3-small">Rendered with <a href="https://www.w3schools.com/w3css/" target="_blank">w3.css</a></p>
+    </footer>
+  </div>
+</body>
+</html>
