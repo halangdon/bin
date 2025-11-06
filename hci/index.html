@@ -1,12 +1,232 @@
-<html>
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
 <head>
-<style>
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HCI Learning Portal — Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#222222; --card:#ffffff; --muted:#4a4a4a; --nav:#00aaff;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0f1113; --text:#e6e6e6; --card:#141618; --muted:#bfbfbf; --nav:#4fb3ff;
+      }
+    }
+    html,body { background: var(--bg); color:var(--text); min-height:100%; }
+    .hero { background: linear-gradient(90deg, rgba(0,170,255,0.12), rgba(0,170,255,0.04)); }
+    .sidebar { background: var(--card); border-right:1px solid rgba(0,0,0,0.06); padding:1rem; height:100%; position:sticky; top:1rem; }
+    .module-card { background: var(--card); border:1px solid rgba(0,0,0,0.06); }
+    @media (max-width: 900px){ .sidebar { position:static; border-right:none; margin-bottom:1rem; } }
+  </style>
 </head>
 <body>
-<h2>/bin/drops/index.html</h2>
-<pre>
-y_y
-</pre>
+  <!-- NAVBAR -->
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="background:var(--card);">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="index.html">
+        <strong>HCI Learning Modules</strong>
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="index.html">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">Modules</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="module1.html">Module 1</a>
+            <a class="navbar-item" href="module2.html">Module 2</a>
+            <a class="navbar-item" href="module3.html">Module 3</a>
+            <a class="navbar-item" href="module4.html">Module 4</a>
+            <a class="navbar-item" href="module5.html">Module 5</a>
+            <a class="navbar-item" href="module6.html">Module 6</a>
+            <a class="navbar-item" href="module7.html">Module 7</a>
+            <a class="navbar-item" href="module8.html">Module 8</a>
+            <a class="navbar-item" href="module9.html">Module 9</a>
+          </div>
+        </div>
+        <a class="navbar-item" href="#">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium" style="padding-top:4.5rem;">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">Human–Computer Interaction (HCI) Learning Portal</h1>
+        <h2 class="subtitle">Modules 1–9 · Foundations, Cognition, Design, Evaluation, Accessibility</h2>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+      <div class="columns">
+
+        <!-- Sidebar -->
+        <div class="column is-3">
+          <aside class="sidebar box">
+            <p class="menu-label"><strong>Quick Access</strong></p>
+            <ul class="menu-list">
+              <li><a href="module1.html">Module 1 — Foundations of HCI</a></li>
+              <li><a href="module2.html">Module 2 — The Human User</a></li>
+              <li><a href="module3.html">Module 3 — Interaction Design</a></li>
+              <li><a href="module4.html">Module 4 — User Requirements</a></li>
+              <li><a href="module5.html">Module 5 — Storyboards & Evaluation</a></li>
+              <li><a href="module6.html">Module 6 — Heuristic Evaluation</a></li>
+              <li><a href="module7.html">Module 7 — UI Design & Prototyping</a></li>
+              <li><a href="module8.html">Module 8 — Evaluation & Usability Testing</a></li>
+              <li><a href="module9.html">Module 9 — Accessibility & Inclusive Design</a></li>
+            </ul>
+            <hr>
+            <p class="is-size-7" style="color:var(--muted)">Tip: Use the menu or the cards to jump to a module. On mobile the sidebar collapses below content.</p>
+          </aside>
+        </div>
+
+        <!-- Main content -->
+        <div class="column is-9">
+          <div class="columns is-multiline">
+            <!-- Module Cards -->
+            <!-- Each card links to module page and contains short summary -->
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 1 — Foundations of HCI</p>
+                  <p class="content">Defines HCI, its history, multidisciplinary roots, and the components of interaction. Goal: make systems usable, useful, desirable.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module1.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 2 — The Human User</p>
+                  <p class="content">Covers perception, memory, mental models, Norman's gulfs, and ergonomics — designing for human strengths & limitations.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module2.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 3 — Interaction Design Process</p>
+                  <p class="content">Iterative cycle: establish requirements, design alternatives, prototype, evaluate. Emphasizes iteration and prototyping fidelity trade-offs.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module3.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 4 — Establishing User Requirements</p>
+                  <p class="content">Methods for gathering requirements: interviews, observation, surveys, personas, scenarios; outputs functional & non-functional requirements.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module4.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 5 — Storyboards & Design Evaluation</p>
+                  <p class="content">How to create storyboards and apply expert- & user-based evaluations. Use storyboards to visualize user journeys before prototyping.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module5.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 6 — Heuristic Evaluation</p>
+                  <p class="content">Nielsen's heuristics, severity ratings, and how to run expert-based reviews to find usability issues early and cheaply.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module6.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 7 — UI Design & Prototyping</p>
+                  <p class="content">Principles of UI, Lo-Fi vs Hi-Fi prototypes, tools and best practices for creating user-friendly interfaces.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module7.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 8 — Evaluation & Usability Testing</p>
+                  <p class="content">Conducting usability tests, collecting quantitative & qualitative data, interpreting results, and iterating on designs.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module8.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="card module-card">
+                <div class="card-content">
+                  <p class="title is-5">Module 9 — Accessibility & Inclusive Design</p>
+                  <p class="content">WCAG principles (POUR), assistive tech, designing inclusively to reach diverse users and comply with standards.</p>
+                </div>
+                <footer class="card-footer">
+                  <a href="module9.html" class="card-footer-item">View Module</a>
+                </footer>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" style="background:var(--card);">
+    <div class="content has-text-centered">
+      <p>© 2025 Human–Computer Interaction Learning Portal · Built with Bulma</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar burger
+    document.addEventListener('DOMContentLoaded', () => {
+      const burgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      burgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target || 'navMenu';
+          const menu = document.getElementById(target);
+          el.classList.toggle('is-active');
+          if(menu) menu.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>

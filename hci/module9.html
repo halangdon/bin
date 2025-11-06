@@ -1,0 +1,60 @@
+<!-- module9.html -->
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Module 9 — Accessibility & Inclusive Design</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>:root{--bg:#fff;--text:#222} @media (prefers-color-scheme: dark){:root{--bg:#0f1113;--text:#e6e6e6}} body{background:var(--bg);color:var(--text)} .sidebar{padding:1rem} details summary{cursor:pointer}</style>
+</head>
+<body>
+  <nav class="navbar is-fixed-top" style="background:var(--card)"><div class="navbar-brand"><a class="navbar-item" href="index.html"><strong>HCI Modules</strong></a><a class="navbar-burger" data-target="navMenu"><span></span><span></span><span></span></a></div><div id="navMenu" class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="index.html">Home</a></div></div></nav>
+
+  <section class="section" style="padding-top:3.5rem">
+    <div class="container"><div class="columns">
+      <div class="column is-3"><aside class="sidebar box"><p class="menu-label"><strong>Quick Access</strong></p><ul class="menu-list"><li><a href="module1.html">Module 1</a></li><li><a href="module2.html">Module 2</a></li><li><a href="module3.html">Module 3</a></li><li><a href="module4.html">Module 4</a></li><li><a href="module5.html">Module 5</a></li><li><a href="module6.html">Module 6</a></li><li><a href="module7.html">Module 7</a></li><li><a href="module8.html">Module 8</a></li><li><a href="module9.html">Module 9</a></li></ul></aside></div>
+
+      <div class="column">
+        <div class="box">
+          <h1 class="title is-3">Module 9 — Accessibility and Inclusive Design</h1>
+          <p class="subtitle">Overview</p>
+          <p>This module introduces accessibility and inclusive design: making systems usable by people with diverse abilities, and applying WCAG and assistive technology principles.</p>
+
+          <details open><summary>9.1 What is Accessibility?</summary>
+            <p>Designing interfaces usable by people with a range of abilities (visual, auditory, motor, cognitive). Examples: screen readers, keyboard navigation, captions.</p>
+          </details>
+
+          <details><summary>9.2 Inclusive Design</summary>
+            <p>Inclusive design considers diversity (age, culture, ability). Principles: recognize exclusion, solve for one extend to many, learn from diversity.</p>
+          </details>
+
+          <details><summary>9.5 WCAG & POUR Principles</summary>
+            <p>WCAG principles: Perceivable, Operable, Understandable, Robust. Levels: A, AA (recommended), AAA.</p>
+          </details>
+
+          <details><summary>9.6 Designing for Accessibility (Best Practices)</summary>
+            <ul>
+              <li>Provide alt text and text alternatives</li>
+              <li>Ensure color contrast, keyboard navigation, clear layouts</li>
+              <li>Provide captions and transcripts for media</li>
+              <li>Avoid conveying info by color alone</li>
+            </ul>
+          </details>
+
+          <details><summary>9.9 Laws & Standards</summary>
+            <p>Examples: ADA, Section 508, EU Web Accessibility Directive, national policies (e.g., Philippine Web Accessibility Policy).</p>
+          </details>
+
+          <hr>
+          <div class="buttons">
+            <a href="module8.html" class="button is-light">← Previous</a>
+            <a href="index.html" class="button is-primary">Home</a>
+          </div>
+        </div>
+      </div>
+
+    </div></div>
+  </section>
+
+  <footer class="footer" style="background:var(--card)"><div class="content has-text-centered"><p>© 2025 HCI Learning Portal</p></div></footer>
+  <script>document.addEventListener('DOMContentLoaded', ()=>{ document.querySelectorAll('.navbar-burger').forEach(b=>b.addEventListener('click', ()=>{ const target=b.dataset.target||'navMenu'; const menu=document.getElementById(target); b.classList.toggle('is-active'); if(menu) menu.classList.toggle('is-active'); })); });</script>
+</body></html>
