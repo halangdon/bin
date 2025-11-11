@@ -3,6 +3,7 @@ dump/check
 - `ms aws unfin j.p-outlook A47..12@@`
 - PRN: `2830 5648 7965 3682`
 - ML: `1195764925`
+- recvpynr `AFRX19Q6`
 
 # links
 
@@ -11,3 +12,6 @@ dump/check
 3. 
 4. 
 5. 
+
+# re-arm
+https://docs.google.com/document/d/13HoEyMnz0dxCT9zbR5R_Bi1QhufaFPBDM0bryIvPQtI/edit?usp=sharing
