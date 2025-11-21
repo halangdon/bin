@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Contrast Blog Page</title>
+    <!-- Bulma CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome for Icons -->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+
+    <style>
+        /*
+        Custom Color Scheme based on the image:
+        --bg-dark: Charcoal background
+        --text-light: White text
+        --primary-pink: Vibrant Pink/Magenta accent (Header, Main Buttons)
+        --secondary-yellow: Bright Yellow/Gold accent (Secondary Buttons, Highlight)
+        */
+        :root {
+            --bg-dark: #282828;
+            --text-light: #FFFFFF;
+            --primary-pink: #E91E63;
+            --secondary-yellow: #FFC107;
+            --border-color: #444444;
+        }
+
+        /* Global Styles */
+        body, html {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+
+        /* Customizing Bulma elements */
+        .navbar, .footer, .navbar-menu.is-active {
+            background-color: var(--bg-dark) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* FIX: Navigation Hover Readability */
+        .navbar-item:hover, a.navbar-item:focus, a.navbar-item:hover .icon {
+            background-color: #363636 !important; /* Slightly lighter dark background for visual feedback */
+            color: var(--secondary-yellow) !important;
+        }
+        .navbar-item:hover span {
+            color: var(--secondary-yellow) !important; /* Yellow text on hover */
+        }
+
+        /* Pink Primary Button/Background */
+        .has-background-primary, .button.is-primary {
+            background-color: var(--primary-pink) !important;
+            color: var(--text-light) !important;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
+        .button.is-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Yellow Link/Secondary Accent Button */
+        .button.is-link, .tag.is-link {
+            background-color: var(--secondary-yellow) !important;
+            color: var(--bg-dark) !important;
+            border: none;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        .button.is-link:hover {
+            filter: brightness(0.9);
+        }
+
+        /* Text and Link Colors */
+        .title, .subtitle, .navbar-item, .navbar-link {
+            color: var(--text-light) !important;
+        }
+        a:not(.button):not(.navbar-item) {
+            color: var(--secondary-yellow);
+            text-decoration: underline;
+        }
+        a:not(.button):not(.navbar-item):hover {
+            color: var(--primary-pink);
+        }
+
+        /* Card styles for dark theme */
+        .card {
+            background-color: #363636;
+            color: var(--text-light);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Hero text adjustments */
+        .hero-body .title {
+            font-size: 3rem;
+            text-shadow: 0 0 10px rgba(233, 30, 99, 0.5); /* Soft glow */
+        }
+
+        /* NEW FIX: Ensure footer text is clearly visible, especially strong tags */
+        .footer p, .footer strong {
+            color: var(--text-light) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="landing.html">
+                <span class="title is-4" style="color: var(--primary-pink) !important;">PROJECT//NIGHT</span>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu" id="burger">
+                <span aria-hidden="true" style="background-color: var(--text-light);"></span>
+                <span aria-hidden="true" style="background-color: var(--text-light);"></span>
+                <span aria-hidden="true" style="background-color: var(--text-light);"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="landing.html">
+                    <span style="color: var(--text-light);">Home</span>
+                </a>
+                <a class="navbar-item" href="blog.html">
+                    <span style="color: var(--text-light);">Blog</span>
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>Sign Up</strong>
+                        </a>
+                        <a class="button is-link">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BLOG PAGE CONTENT -->
+    <div id="blog-page" class="page-content">
+        <section class="hero is-small" style="background-color: var(--bg-dark); border-bottom: 2px solid var(--secondary-yellow);">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-2 has-text-weight-bold" style="color: var(--secondary-yellow);">
+                        The <span style="color: var(--primary-pink);">Code</span> Blog
+                    </h1>
+                    <h2 class="subtitle is-4" style="color: #cccccc;">
+                        Insights, tutorials, and deep dives into the dark world of tech.
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <!-- Blog Post 1 -->
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4" style="color: var(--primary-pink);">
+                                    Understanding Asynchronous JavaScript
+                                </p>
+                                <p class="subtitle is-6" style="color: #aaa;">
+                                    by Jane Doe | <span class="tag is-link is-small">JavaScript</span>
+                                </p>
+                                <div class="content" style="color: var(--text-light);">
+                                    A deep dive into Promises, async/await, and why non-blocking operations are essential for modern web applications.
+                                </div>
+                                <a href="#" class="button is-primary is-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4" style="color: var(--primary-pink);">
+                                    The Power of CSS Grid Layout
+                                </p>
+                            <p class="subtitle is-6" style="color: #aaa;">
+                                    by Alex Smith | <span class="tag is-link is-small">CSS</span>
+                                </p>
+                                <div class="content" style="color: var(--text-light);">
+                                    Move beyond Flexbox. Learn how to create complex, two-dimensional layouts with minimal code and maximum flexibility.
+                                </div>
+                                <a href="#" class="button is-primary is-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4" style="color: var(--primary-pink);">
+                                    Setting up a Bulma Dark Theme
+                                </p>
+                                <p class="subtitle is-6" style="color: #aaa;">
+                                    by Admin | <span class="tag is-link is-small">Design</span>
+                                </p>
+                                <div class="content" style="color: var(--text-light);">
+                                    A tutorial on leveraging custom CSS variables to create stunning, high-contrast themes in Bulma projects.
+                                </div>
+                                <a href="#" class="button is-primary is-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 4 -->
+                    <div class="column is-half">
+                        <div class="card">
+                            <div class="card-content">
+                                <p class="title is-4" style="color: var(--primary-pink);">
+                                    Why I Switched to TypeScript
+                                </p>
+                                <p class="subtitle is-6" style="color: #aaa;">
+                                    by Coder Guy | <span class="tag is-link is-small">TypeScript</span>
+                                </p>
+                                <div class="content" style="color: var(--text-light);">
+                                    Explore the benefits of static typing and how it dramatically improves code quality and maintainability in large projects.
+                                </div>
+                                <a href="#" class="button is-primary is-small">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <!-- FIX: Ensure strong readability -->
+            <p style="color: var(--text-light);">
+                <strong>Project Night</strong> by <span style="color: var(--primary-pink);">The High-Contrast Dev Team</span>.
+                The color scheme is inspired by high-impact visual notices.
+            </p>
+            <p>
+                <a href="#" style="color: var(--secondary-yellow);">Terms</a> |
+                <a href="#" style="color: var(--secondary-yellow);">Privacy</a> |
+                <a href="https://bulma.io/" target="_blank" style="color: var(--secondary-yellow);">Bulma Framework</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile menu toggle logic
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach(el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
