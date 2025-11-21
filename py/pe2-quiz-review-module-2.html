@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Essentials 2 Quiz Review - Module 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .section {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        .question-card {
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .is-correct-header {
+            background-color: #3e8ed0; /* Bulma Link color */
+            color: white;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .correct-option {
+            background-color: #ebfffc; /* Light Teal/Cyan for correct option highlight */
+            border: 2px solid #209cee;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .correct-explanation {
+            border-left: 4px solid #48c78e; /* Bulma Success */
+            padding: 15px;
+            background-color: #f6fffb;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .incorrect-analysis {
+            border-left: 4px solid #f14668; /* Bulma Danger */
+            padding: 15px;
+            background-color: #fff6f6;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+        .code-block {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <h1 class="title is-2 has-text-centered mb-5">🐍 Python Essentials 2 Quiz Review</h1>
+        <p class="subtitle has-text-centered mb-6">Detailed explanations for Exception Handling and String Operations</p>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 1: The `try` Block
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Entering the <code>try</code> block implies that:
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) some of the instructions from this block may not be executed
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) all of the instructions from this block will be executed
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) none of the instructions from this block will be executed
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) the block will be omitted
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The purpose of the **<code>try</code> block** is to contain code that might raise an **exception**. If an exception is raised by any instruction inside the block, the execution of the <code>try</code> block is **immediately halted** at that point. Any subsequent instructions in the block are skipped, meaning execution is not guaranteed to finish.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(B) all of the instructions... will be executed:</code> Incorrect, as an exception will prevent this.</li>
+                        <li><code class="has-text-weight-bold">(C) none of the instructions... will be executed:</code> Incorrect, as the block starts execution; it only stops if an error occurs.</li>
+                        <li><code class="has-text-weight-bold">(D) the block will be omitted:</code> Incorrect, the block is always entered when the program reaches it.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 2: The Unnamed `except` Block
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The unnamed <code>except:</code> block:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) must be the first one
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) can be placed anywhere
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) cannot be used if any named block has been used
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) must be the last one
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The unnamed **<code>except:</code>** block is the **catch-all** handler. Since <code>except</code> blocks are checked sequentially, if the catch-all were placed anywhere but last, it would catch every exception, preventing subsequent **specific** handlers from ever being reached. Python requires it to be the final exception handler.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(A) must be the first one:</code> Incorrect, this would render all other specific handlers useless.</li>
+                        <li><code class="has-text-weight-bold">(B) can be placed anywhere:</code> Incorrect, it is syntactically restricted to the last position.</li>
+                        <li><code class="has-text-weight-bold">(C) cannot be used if any named block has been used:</code> Incorrect, it is frequently used *after* named blocks.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 3: Top-Most Exception Class
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The top-most Python exception is called:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) TopException
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) PythonException
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) Exception
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) BaseException
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The root of the entire Python exception hierarchy is **<code>BaseException</code>**. The more commonly used **<code>Exception</code>** (Option C) is actually a subclass of <code>BaseException</code>. System-exiting exceptions like <code>SystemExit</code> and <code>KeyboardInterrupt</code> inherit directly from <code>BaseException</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(C) Exception:</code> This is the base class for *most* non-fatal exceptions, but not the absolute top; it is a subclass of <code>BaseException</code>.</li>
+                        <li><code class="has-text-weight-bold">(A) & (B):</code> Not standard Python exception names.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 4: The `assert` Statement
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following statement:
+                </p>
+                <div class="code-block">
+                    assert var == 0
+                </div>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) has no effect
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) will stop the program when <code>var == 0</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) is erroneous
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) will stop the program when <code>var != 0</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The **<code>assert</code>** statement is a debugging tool that tests a condition. If the condition (**<code>var == 0</code>**) is **True**, nothing happens. If the condition is **False** (meaning **<code>var != 0</code>**), it raises an **<code>AssertionError</code>**, which typically stops the program.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(B) will stop the program when <code>var == 0</code>:</code> Incorrect, it stops the program when the condition is **False**.</li>
+                        <li><code class="has-text-weight-bold">(A) has no effect:</code> Incorrect, it has a conditional effect.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 5: Exception Handling Output
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is the expected output of the following code?
+                </p>
+                <div class="code-block">
+                    try:
+                        print("5"/0)
+                    except ArithmeticError:
+                        print("arith")
+                    except ZeroDivisionError:
+                        print("zero")
+                    except:
+                        print("some")
+                </div>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) e
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) some
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) zero
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) arith
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The expression <code>"5"/0</code> raises a **<code>TypeError</code>** (string divided by integer). This specific error is not caught by the <code>ArithmeticError</code> or <code>ZeroDivisionError</code> blocks. It is finally caught by the **unnamed <code>except:</code>** (catch-all) block, which executes <code>print("some")</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(C) zero & (D) arith:</code> These blocks only handle arithmetic errors. The actual error is a <code>TypeError</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 6: Concrete Exceptions (Select Two)
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Which of the following are examples of built-in **concrete** Python exceptions?
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (A) ImportError
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (B) IndexError
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (C) ArithmeticError
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (D) BaseException
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>A **concrete exception** is one that is **directly raised** by Python code. **<code>ImportError</code>** and **<code>IndexError</code>** are specific, concrete errors. **<code>ArithmeticError</code>** and **<code>BaseException</code>** are abstract base classes, meant for inheritance, not for being raised directly to signify a specific code error.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(C) ArithmeticError:</code> Abstract base class for numeric errors.</li>
+                        <li><code class="has-text-weight-bold">(D) BaseException:</code> The abstract root of the entire exception hierarchy.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 7: What is ASCII?
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    ASCII is:
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) short for American Standard Code for Information Interchange
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) a predefined Python variable name
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) a standard Python module name
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) a character name
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>ASCII is the acronym for **American Standard Code for Information Interchange**, the standard that defines how 128 characters (letters, numbers, and symbols) are represented as 7-bit numbers.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(D) a character name:</code> It is the name of the **coding system**, not a single character.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 8: What is UTF-8?
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    UTF-8 is:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) a Python version name
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) the 9th version of the UTF standard
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) a synonym for *byte*
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) a form of encoding Unicode code points
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>**UTF-8** (**U**nicode **T**ransformation **F**ormat - 8-bit) is the most common way to **encode** (translate) Unicode code points (the numerical IDs for characters) into a sequence of **bytes** for digital storage and transmission.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(B) the 9th version...:</code> The '8' refers to its use of 8-bit units, not a version number.</li>
+                        <li><code class="has-text-weight-bold">(C) a synonym for *byte*:</code> It is a **method of organizing bytes**, not a byte itself.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 9: What is UNICODE?
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    UNICODE is a standard:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) for coding floating-point numbers
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) like ASCII, but much more expansive
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) honored by the whole universe
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) used by coders from universities
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>**Unicode** is a character set designed to include every character from every writing system in the world, assigning a unique code point to each. This makes it far more extensive than the 128-character limit of **ASCII**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(A) for coding floating-point numbers:</code> Incorrect, that is handled by standards like IEEE 754.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 10: String Length and Escape Sequences
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code prints:
+                </p>
+                <div class="code-block">
+                    x = '\"'
+                    print(len(x))
+                </div>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) 1
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 3
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) 20
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) 2
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The sequence **<code>\"</code>** is an **escape sequence**. The backslash (`\`) is an instruction to the interpreter, not a character in the final string length. It causes the double quote (`"`) to be treated as a literal character. The string <code>x</code> contains only the single double-quote character, so its length is **1**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(D) 2:</code> This would only be correct if the backslash was counted as a character, which it isn't in an escape sequence.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 11: Character Ordinal Values
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code prints:
+                </p>
+                <div class="code-block">
+                    print(ord('c') - ord('a'))
+                </div>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) 1
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 0
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) 2
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) 3
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The **<code>ord()</code>** function returns the numerical Unicode code point. Since 'c' and 'a' are consecutive letters, the difference represents their positional distance: <code>ord('c')</code> (99) - <code>ord('a')</code> (97) = **2**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(A) 1:</code> Would be the result of `ord('b') - ord('a')`.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 12: Character Conversion
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code prints:
+                </p>
+                <div class="code-block">
+                    print(chr(ord('z') - 2))
+                </div>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) x
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) a
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) y
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) z
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code>ord('z')</code> is **122**. Subtracting 2 yields **120**. The **<code>chr()</code>** function converts the code point 120 back to the corresponding character, which is **'x'**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(C) y:</code> The result if 1 were subtracted.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 13: String Operators
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code prints:
+                </p>
+                <div class="code-block">
+                    print(3 * 'abc' + 'xyz')
+                </div>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code>abcxyzxyzxyz</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code>abcabcabcxyz</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code>abcabcxyzxyz</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code>xyzxyzxyzabc</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The multiplication operator (`*`) has higher precedence than addition (`+`).
+                    <ol>
+                        <li>**Repetition:** <code>3 * 'abc'</code> results in <code>'abcabcabc'</code>.</li>
+                        <li>**Concatenation:** <code>'abcabcabc' + 'xyz'</code> results in **<code>'abcabcabcxyz'</code>**.</li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(D) xyzxyzxyzabc:</code> Reverses the order of concatenation.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 14: String Comparison
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code prints:
+                </p>
+                <div class="code-block">
+                    print('Mike' > 'Mikey')
+                </div>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) 1
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 0
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) True
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) False
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>String comparison is based on lexicographical order. Since **'Mike' is a prefix of 'Mikey'**, the shorter string is considered **less than** the longer string. Therefore, the expression <code>'Mike' > 'Mikey'</code> is **False**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(C) True:</code> This would only be true if the expression were <code>'Mike' < 'Mikey'</code>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 15: The `float()` Function
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following code:
+                </p>
+                <div class="code-block">
+                    print(float("1, 3"))
+                </div>
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    results in:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) prints <code>1.3</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) prints <code>13</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) raises a <code>ValueError</code> exception
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) prints <code>1,3</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The **<code>float()</code>** function requires a **dot (`.`)** as the decimal separator. The presence of the comma (`,`) and the space in the string <code>"1, 3"</code> makes it an **invalid format** for a single floating-point number in Python, causing the function to raise a **<code>ValueError</code>**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(A), (B), (D):</code> None of these results are possible because the function fails to convert the string and raises an exception instead.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

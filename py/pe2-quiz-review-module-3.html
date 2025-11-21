@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Essentials 2 Quiz Review - Module 3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .section {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        .question-card {
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .is-correct-header {
+            background-color: #3e8ed0; /* Bulma Link color */
+            color: white;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .correct-option {
+            background-color: #ebfffc; /* Light Teal/Cyan for correct option highlight */
+            border: 2px solid #209cee;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .correct-explanation {
+            border-left: 4px solid #48c78e; /* Bulma Success */
+            padding: 15px;
+            background-color: #f6fffb;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .incorrect-analysis {
+            border-left: 4px solid #f14668; /* Bulma Danger */
+            padding: 15px;
+            background-color: #fff6f6;
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+        .code-block {
+            padding: 10px;
+            background-color: #333;
+            color: #f8f8f2;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre;
+            font-size: 0.9em;
+        }
+        .code-line {
+            line-height: 1.5;
+        }
+        .question-body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <h1 class="title is-2 has-text-centered mb-5">🐍 Python Essentials 2 Quiz Review</h1>
+        <p class="subtitle has-text-centered mb-6">Detailed explanations for Object-Oriented Programming, Inheritance, and Exceptions (Module 3)</p>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 1: LIFO Data Structure
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    A data structure described as **LIFO** is actually a:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) tree
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) stack
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) list
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) heap
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><strong>LIFO</strong> stands for **Last-In, First-Out**, which is the fundamental principle governing the behavior of a **stack** data structure. The element added last is the first one to be removed.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 2: Valid Python Class Instantiation
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    If the class's constructor is declared as below, which one of the assignments is valid?
+                </p>
+                <pre class="code-block"><code>1 class Class:
+2     def __init__(self):
+3         pass</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code>object = Class(self)</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code>object = Class()</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code>object = Class(object)</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code>object = Class</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>To create an instance of a class, you call the class name followed by parentheses: <code>ClassName()</code>. The <code>self</code> parameter is passed **automatically** by Python; since the <code>__init__</code> method takes no other arguments, calling <code>Class()</code> is the correct way.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">(A, C):</code> These attempt to pass an extra argument, which would raise a <code>TypeError</code>.</li>
+                        <li><code class="has-text-weight-bold">(D):</code> This assigns the **class object itself** (the blueprint), not an instance of the class.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 3: Calling Superclass Constructor
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    If there is a superclass named A and a subclass named B, which one of the presented invocations should you put instead of the comment?
+                </p>
+                <pre class="code-block"><code>1 class A:
+2     def __init__(self):
+3         self.a = 1
+4
+5 class B(A):
+6     def __init__(self):
+7         # Put selected line here.
+8         self.b = 2
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code>A.__init__()</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code>A.__init__(1)</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) <code>A.__init__(self)</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code>__init__()</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>When calling the superclass method **directly** using the class name (e.g., <code>A.__init__</code>), you must explicitly pass the instance to be initialized as the first argument, which is **<code>self</code>**. (The preferred, modern way is <code>super().__init__()</code>.)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 4: Name Mangling and Access
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the effect of running the following code?
+                </p>
+                <pre class="code-block"><code>1 class A:
+2     def __init__(self,v):
+3         self.__a = v + 1
+4
+5 a = A(0)
+6 print(a.__a)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) The code will raise an <code>AttributeError</code> exception
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 1
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) 0
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) 2
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The attribute <code>self.__a</code> (with two leading underscores) is subject to **name mangling**. It is renamed internally to <code>_A__a</code>. When line 6 attempts to access it using the original name <code>a.__a</code>, the attribute is not found, resulting in an **<code>AttributeError</code>**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 5: Method Execution and Return Value
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the output of the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     def __init__(self,v = 1):
+ 3         self.v = v
+ 4
+ 5     def set(self,v):
+ 6         self.v = v
+ 7         return v
+ 8
+ 9 a = A()
+10 print(a.set(a.v + 1))
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) 0
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 3
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) 2
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) 1
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>1. **Initialization:** <code>a = A()</code> sets <code>a.v</code> to **1** (default value).</p>
+                    <p>2. **Argument Evaluation:** The expression <code>a.v + 1</code> evaluates to $1 + 1 = \mathbf{2}$.</p>
+                    <p>3. **Method Call:** <code>a.set(2)</code> is called. Inside <code>set</code>, <code>self.v</code> is updated to 2, and the method **returns 2**.</p>
+                    <p>4. **Output:** <code>print()</code> prints the **return value** of the <code>a.set()</code> call, which is **2**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 6: Class vs. Instance Variables
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the output of the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     X = 0
+ 3     def __init__(self,v = 0):
+ 4         self.Y = v
+ 5         A.X += v
+ 6
+ 7 a = A()
+ 8 b = A(1)
+ 9 c = A(2)
+10 print(c.X)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) 0
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 2
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) 1
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) 3
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code>X</code> is a **class variable** (shared by all instances) and is modified directly using <code>A.X</code> in the constructor. Its value accumulates with each instantiation:</p>
+                    <ul>
+                        <li>Initial <code>A.X</code>: 0</li>
+                        <li><code>a = A()</code> (v=0): $0 + 0 = \mathbf{0}$</li>
+                        <li><code>b = A(1)</code> (v=1): $0 + 1 = \mathbf{1}$</li>
+                        <li><code>c = A(2)</code> (v=2): $1 + 2 = \mathbf{3}$</li>
+                    </ul>
+                    <p><code>print(c.X)</code> retrieves the final class variable value, **3**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 7: <code>hasattr</code> Function
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the output of the following code?
+                </p>
+                <pre class="code-block"><code>1 class A:
+2     A = 1
+3
+4 print(hasattr(A, 'A'))
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) False
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) 0
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) True
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) 1
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code>hasattr(A, 'A')</code> checks if the class object <code>A</code> possesses an attribute named <code>'A'</code>. Since <code>A = 1</code> on Line 2 defines a class variable named **A**, the check returns **<code>True</code>**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 8: Instantiation Error
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code>1 class A:
+2     def __init__(self):
+3         pass
+4
+5 a = A(1)
+6 print(hasattr(a, 'A'))
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) 1
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) True
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) it will raise an exception
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) False
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The code on Line 5, <code>a = A(1)</code>, attempts to pass an argument to the constructor. However, <code>A.__init__(self)</code> is defined to accept only the implicit <code>self</code> argument. This raises a **<code>TypeError</code>** exception before the <code>print</code> statement is ever reached.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 9: Inheritance and <code>__str__</code> MRO
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     def __str__(self):
+ 3         return 'a'
+ 4
+ 5 class B(A):
+ 6     def __str__(self):
+ 7         return 'b'
+ 8
+ 9 class C(B):
+10     pass
+11
+12 o = C()
+13 print(o)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) it will print b
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will raise an exception
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will print a
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code>print(o)</code> calls <code>o.__str__()</code>. The Method Resolution Order (MRO) is **C** &rarr; **B** &rarr; **A**. Python finds <code>__str__</code> in the closest parent, class **B**, and executes it, which returns **'b'**. This is called method overriding.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 10: <code>issubclass</code> Transitivity
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     pass
+ 3
+ 4 class B(A):
+ 5     pass
+ 6
+ 7 class C(B):
+ 8     pass
+ 9
+10 print(issubclass(C, A))
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will print False
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will print 1
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) it will print True
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will raise an exception
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>Inheritance is **transitive**: since C inherits from B, and B inherits from A, class **C is indirectly a subclass of A**. The <code>issubclass()</code> function checks for both direct and indirect inheritance, so it returns **<code>True</code>**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 11: Multiple Inheritance Method Resolution
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     def a(self):
+ 3         print('a', end='')
+ 4
+ 5 class B:
+ 6     def a(self):
+ 7         print('b', end='')
+ 8
+ 9 class C(B, A):
+10     def c(self):
+11         self.a()
+12
+13 o = C()
+14 o.c()
+</code></pre>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) it will print b
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will print c
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will print a
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will raise an exception
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The class definition is <code>class C(B, A)</code>. When <code>self.a()</code> is called from within <code>C.c()</code>, the Method Resolution Order (MRO) is **C** &rarr; **B** &rarr; **A**. The method <code>a()</code> is found first in class **B**, due to its priority in the inheritance list, and executes, which prints **'b'**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 12: Multiple Inheritance <code>__str__</code> MRO
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     def __str__(self):
+ 3         return 'a'
+ 4
+ 5 class B:
+ 6     def __str__(self):
+ 7         return 'b'
+ 8
+ 9 class C(A, B):
+10     pass
+11
+12 o = C()
+13 print(o)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will print b
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will print c
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) it will print a
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will raise an exception
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The class definition is <code>class C(A, B)</code>. The MRO is **C** &rarr; **A** &rarr; **B**. Python finds <code>__str__</code> in the first parent specified in the inheritance list, class **A**, and executes it, which returns **'a'**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 13: Inheritance and Attribute Shadowing
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class A:
+ 2     v = 2
+ 3
+ 4 class B(A):
+ 5     v = 1
+ 6
+ 7 class C(B):
+ 8     pass
+ 9
+10 o = C()
+11 print(o.v)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) it will print 1
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will print 2
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will raise an exception
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will print an empty line
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The attribute lookup for <code>o.v</code> follows the MRO: Instance &rarr; C &rarr; **B** &rarr; A. The class variable <code>v</code> is found in class **B** where it is set to **1**. This value shadows (overrides) the value 2 set in class A.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 14: <code>try...except...else...finally</code> Flow
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 def f(x):
+ 2     try:
+ 3         x = x / x
+ 4     except:
+ 5         print("a",end='')
+ 6     else:
+ 7         print("b",end='')
+ 8     finally:
+ 9         print("c",end='')
+10
+11 f(1)
+12 f(0)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will raise an unhandled exception
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) it will print acac
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will print bcbc
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) it will print bcac
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>1. **<code>f(1)</code>** (Success): Executes <code>try</code>, skips <code>except</code>, runs <code>else</code> (b), runs <code>finally</code> (c). Output: **bc**.</p>
+                    <p>2. **<code>f(0)</code>** (Failure): Runs <code>try</code> (raises <code>ZeroDivisionError</code>), runs <code>except</code> (a), skips <code>else</code>, runs <code>finally</code> (c). Output: **ac**.</p>
+                    <p>Combined output: **bcac**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 15: Exception Arguments
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code>1 try:
+2     raise Exception(1,2,3)
+3 except Exception as e:
+4     print(len(e.args))
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will print 2
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) it will print 3
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will print 1
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will raise an unhandled exception
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>Arguments passed to an exception constructor (e.g., <code>1, 2, 3</code>) are stored as a tuple in the exception object's **<code>args</code>** attribute. <code>e.args</code> is <code>(1, 2, 3)</code>, and its length is **3**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 16: Custom Exception <code>__init__</code> Behavior
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class Ex(Exception):
+ 2     def __init__(self, msg):
+ 3         Exception.__init__(self, msg + msg)
+ 4         self.args = (msg,)
+ 5
+ 6 try:
+ 7     raise Ex('ex')
+ 8 except Ex as e:
+ 9     print(e)
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will print an empty line
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) it will print ex
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will print exex
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will raise an unhandled exception
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>1.  **Line 3:** <code>Exception.__init__(self, 'exex')</code> initializes the base class state with the concatenated string.</p>
+                    <p>2.  **Line 4 (The Overwrite):** <code>self.args = (msg,)</code> explicitly **overwrites** the instance's <code>args</code> attribute, setting it to the single-element tuple <code>('ex',)</code>.</p>
+                    <p>3.  **Line 9 (Print):** When <code>print(e)</code> is called, the exception's <code>__str__</code> method uses the final value of the <code>self.args</code> attribute. Since <code>self.args</code> is a single-element tuple, <code>('ex',)</code>, Python prints only the element itself, resulting in **ex**.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 17: Implementing the Iterator Protocol
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="question-body is-size-6 has-text-weight-semibold mb-3">
+                    What will be the result of executing the following code?
+                </p>
+                <pre class="code-block"><code> 1 class I:
+ 2     def __init__(self):
+ 3         self.s = 'abc'
+ 4         self.i = 0
+ 5
+ 6     def __iter__(self):
+ 7         return self
+ 8
+ 9     def __next__(self):
+10         if self.i == len(self.s):
+11             raise StopIteration
+12         v = self.s[self.i]
+13         self.i += 1
+14         return v
+15
+16 for x in I():
+17     print(x,end='')
+</code></pre>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) it will raise a handled exception
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) it will print abc
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) it will raise an unhandled exception
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) it will print a
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The class correctly implements the iterator protocol. The <code>for</code> loop iterates through the characters 'a', 'b', and 'c' by repeatedly calling <code>__next__</code>. The <code>StopIteration</code> exception is used to signal the end of the sequence and is handled gracefully by the <code>for</code> loop. The output is printed on a single line: **abc**.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Python Essentials 2 Quiz Review</strong> compiled for Module 3.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

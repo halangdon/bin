@@ -14,6 +14,8 @@ dump/check
 5. 
 
 # re-arm
-https://docs.google.com/document/d/13HoEyMnz0dxCT9zbR5R_Bi1QhufaFPBDM0bryIvPQtI/edit?usp=sharing
-
-https://docs.google.com/document/d/1mK00vmDTox-QOhkVGU0xLcVxB5VhdyFFUCyPWqMn8r4/edit?usp=sharing
+git status
+git add .
+git commit -m "Your descriptive commit message"
+git pull origin <branch-name>
+git push origin <branch-name>

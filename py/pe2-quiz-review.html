@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Module and PIP Quiz Review</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+        .section {
+            padding-top: 24px;
+            padding-bottom: 24px;
+        }
+        .question-card {
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .is-correct-header {
+            background-color: #3e8ed0; /* Bulma Link color */
+            color: white;
+        }
+        .correct-option {
+            background-color: #ebfffc; /* Light Teal/Cyan for correct option highlight */
+            border: 2px solid #209cee;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        .correct-explanation {
+            border-left: 4px solid #48c78e; /* Bulma Success */
+            padding: 15px;
+            background-color: #f6fffb;
+            margin-bottom: 15px;
+        }
+        .incorrect-analysis {
+            border-left: 4px solid #f14668; /* Bulma Danger */
+            padding: 15px;
+            background-color: #fff6f6;
+            margin-top: 15px;
+        }
+        .code-block {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<section class="section">
+    <div class="container">
+        <h1 class="title is-2 has-text-centered mb-5">🐍 Python Quiz Review: Modules and PIP</h1>
+
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 1: Module Importing Syntax
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Knowing that a function named <code class="has-text-weight-bold">fun()</code> resides in a module named <code class="has-text-weight-bold">mod</code>, choose the correct way to import it.
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">import fun from mod</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">import fun</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) <code class="is-size-6">from mod import fun</code> 
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">from fun import mod</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The standard Python syntax to import a specific element (like a function, class, or variable) from a module directly into the current namespace is <code class="has-text-weight-bold">from &lt;module_name&gt; import &lt;item_name&gt;</code>. This allows the function to be called simply as <code class="has-text-weight-bold">fun()</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">import fun from mod</code>: **Incorrect** keyword order.</li>
+                        <li><code class="has-text-weight-bold">import fun</code>: Imports a module named <code class="has-text-weight-bold">fun</code>.</li>
+                        <li><code class="has-text-weight-bold">from fun import mod</code>: Incorrectly reverses the module and function names.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The required syntax for importing a specific element (<code class="has-text-weight-bold">fun</code>) from a module (<code class="has-text-weight-bold">mod</code>) is <code class="has-text-weight-bold">from mod import fun</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 2: Invoking Imported Functions
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Knowing that a function named <code class="has-text-weight-bold">fun()</code> resides in a module named <code class="has-text-weight-bold">mod</code>, and it has been imported using the following line: <code class="code-block">import mod</code>. Choose the way it can be invoked in your code.
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">fun()</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">mod->fun()</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) <code class="is-size-6">mod.fun()</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">mod::fun()</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>When you use <code class="has-text-weight-bold">import mod</code>, you bring the entire module object into the namespace. To access any item within that module, you must use the **dot notation**: <code class="has-text-weight-bold">module_name.item_name()</code>, which resolves to <code class="has-text-weight-bold">mod.fun()</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">fun()</code>: Only works if imported using <code class="has-text-weight-bold">from mod import fun</code>.</li>
+                        <li><code class="has-text-weight-bold">mod->fun()</code>: **Incorrect** syntax (uses C++/PHP arrow operator).</li>
+                        <li><code class="has-text-weight-bold">mod::fun()</code>: **Incorrect** syntax (uses C++ scope resolution operator).</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The standard Python convention for calling an item from an imported module object is to use <code class="has-text-weight-bold">mod.fun()</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 3: Discovering Module Contents
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    A function which returns a list of all entities available in a module is called:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">listmodule()</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code class="is-size-6">dir()</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">entities()</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">content()</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The built-in Python function <code class="has-text-weight-bold">dir()</code> is used to retrieve a list of valid attributes (functions, classes, variables, etc.) for any object, including a module. When passed a module name (e.g., <code class="has-text-weight-bold">dir(math)</code>), it returns a list of all items defined within it.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">listmodule()</code>: Not a standard built-in Python function.</li>
+                        <li><code class="has-text-weight-bold">entities()</code>: Not a standard built-in Python function.</li>
+                        <li><code class="has-text-weight-bold">content()</code>: Not a standard built-in Python function.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The standard Python function for querying the contents (directory) of an object is <code class="has-text-weight-bold">dir()</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 4: .pyc Files
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    A <code class="has-text-weight-bold">.pyc</code> file contains:
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) <code class="is-size-6">compiled Python code</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">a Python interpreter</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">a Python compiler</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">Python source code</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>When Python runs a <code class="has-text-weight-bold">.py</code> file, it first translates the source code into an intermediate format called **bytecode**. The <code class="has-text-weight-bold">.pyc</code> (Python compiled) file is where this bytecode is stored, which speeds up subsequent execution by skipping the initial compilation step.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>**a Python interpreter**: The interpreter is the execution program, not the file contents.</li>
+                        <li>**a Python compiler**: The compilation happens within the interpreter.</li>
+                        <li>**Python source code**: Source code is stored in the <code class="has-text-weight-bold">.py</code> file.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The <code class="has-text-weight-bold">.pyc</code> file stores the intermediate **compiled Python code** (bytecode).</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 5: Module Execution
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    When a module is imported, its contents:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">are ignored</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code class="is-size-6">are executed once (implicitly)</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">may be executed (explicitly)</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">are executed as many times as they are imported</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The first time a module is imported in a Python program, its top-level code is **executed** to define its functions, variables, and initial state. Python's module loading system then caches the module, ensuring that any subsequent imports only retrieve the loaded module object and **do not re-execute** the code.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>**are ignored**: Incorrect, the code must run to define the module contents.</li>
+                        <li>**may be executed (explicitly)**: Incorrect, the execution is implicit in the act of importing.</li>
+                        <li>**are executed as many times as they are imported**: Incorrect, they are only executed once.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: A module's code is executed only **once** upon its first import.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 6: Current Module Name Variable
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    A predefined Python variable that stores the current module name is called:
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) <code class="is-size-6">__name__</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">__mod__</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">__module__</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">__modname__</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The special variable <code class="has-text-weight-bold">__name__</code> is assigned to every module. It stores the module's name as a string. If the file is run directly, its value is <code class="has-text-weight-bold">'__main__'</code>; otherwise, it is the module's actual file name (e.g., <code class="has-text-weight-bold">'my_module'</code>) when imported.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">__mod__</code>: Not a standard predefined variable for the module name.</li>
+                        <li><code class="has-text-weight-bold">__module__</code>: Used to store the module a function or class was defined in, not the current module name at the top level.</li>
+                        <li><code class="has-text-weight-bold">__modname__</code>: Not a standard predefined variable for the module name.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The predefined variable for the module name is <code class="has-text-weight-bold">__name__</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 7: Package/Module Import Hierarchy
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The following statement: <code class="code-block">from a.b import c</code> causes the import of:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">module c from package b from entity a</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">package c from entity b from module a</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">entity c from package b from module a</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) <code class="is-size-6">entity c from module b from package a</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The dot notation in imports denotes hierarchy: <code class="has-text-weight-bold">a</code> is the **Package**, <code class="has-text-weight-bold">b</code> is the **Module** inside the package, and <code class="has-text-weight-bold">c</code> is the specific **Entity** (function, class, or variable) being imported from the module.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <p>Options A, B, and C incorrectly map the names to the roles of Package, Module, and Entity, reversing the correct organizational hierarchy defined by the <code class="has-text-weight-bold">package.module import entity</code> structure.</p>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The import hierarchy is <code class="has-text-weight-bold">Package.Module import Entity</code>, making <code class="has-text-weight-bold">a</code> the package, <code class="has-text-weight-bold">b</code> the module, and <code class="has-text-weight-bold">c</code> the entity.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 8: Math Module Calculation
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is the expected value assigned to the <code class="has-text-weight-bold">result</code> variable after the following code is executed?
+                    <div class="code-block"><code>import math<br>result = math.e != math.pow(2, 4)<br>print(int(result))</code></div>
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">16.0</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">2.718281828459045</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">False</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) <code class="is-size-6">True</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <ol>
+                        <li><code class="has-text-weight-bold">math.e</code>: Euler's number, approximately **2.71828**.</li>
+                        <li><code class="has-text-weight-bold">math.pow(2, 4)</code>: Calculates $2^4$, which equals **16.0**.</li>
+                        <li>Comparison: <code class="has-text-weight-bold">2.71828 != 16.0</code>. Since the values are not equal, the expression evaluates to the Boolean value **True**.</li>
+                    </ol>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <p>The code is a Boolean comparison. The result is the Boolean value **True**. Options A and B are the operands, and Option C is the wrong Boolean result.</p>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The comparison <code class="has-text-weight-bold">2.71828 != 16.0</code> is True, which is the value assigned to the variable.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 9: Random Module Output
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is the expected output of the following code?
+                    <div class="code-block"><code>from random import randint<br>for i in range(2): print(randint(1, 2), end='')</code></div>
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">12 or 21</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">There are millions of possible combinations, and the exact output cannot be predicted</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) <code class="is-size-6">11, 12, 21, or 22</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">12</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The loop executes **twice**. <code class="has-text-weight-bold">randint(1, 2)</code> can only return **1 or 2**. Since the outputs are concatenated (<code class="has-text-weight-bold">end=''</code>), the possible combinations are:</p>
+                    <p>1st call (1) + 2nd call (1) $\rightarrow$ **11**<br>
+                    1st call (1) + 2nd call (2) $\rightarrow$ **12**<br>
+                    1st call (2) + 2nd call (1) $\rightarrow$ **21**<br>
+                    1st call (2) + 2nd call (2) $\rightarrow$ **22**</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <p>Option A is incomplete. Option B is incorrect because the set of all possible outcomes is clearly limited to four combinations. Option D is only one possible outcome.</p>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The four possible outcomes are 11, 12, 21, and 22.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 10: Platform Module (Select two)
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Choose the true statements about the <code class="has-text-weight-bold">platform</code> module.
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (A) The <code class="has-text-weight-bold">processor</code> function returns an integer with the number of currently running processes.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (B) The <code class="has-text-weight-bold">version</code> function from the <code class="has-text-weight-bold">platform</code> module returns a string with your OS version.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (C) The <code class="has-text-weight-bold">version</code> function from the <code class="has-text-weight-bold">platform</code> module returns a string with your Python version.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (D) The <code class="has-text-weight-bold">system</code> function from the <code class="has-text-weight-bold">platform</code> module returns a string with your OS name.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code class="has-text-weight-bold">platform.version()</code> provides the detailed OS release version string (e.g., '10.0.19045' on Windows). <code class="has-text-weight-bold">platform.system()</code> provides the generic OS name (e.g., 'Linux', 'Windows').</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">platform.processor()</code> returns the **processor identity string**, not the count of running processes.</li>
+                        <li>The third option is false; <code class="has-text-weight-bold">platform.python_version()</code> returns the Python version.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: <code class="has-text-weight-bold">version()</code> and <code class="has-text-weight-bold">system()</code> are correctly described.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 11: Bytecode Cache Directory
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    During the first import of a module, Python deploys the <code class="has-text-weight-bold">.pyc</code> files in the directory called:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">Hashbang</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">__init__</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (C) <code class="is-size-6">__pycache__</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">Mymodules</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>Compiled bytecode files (<code class="has-text-weight-bold">.pyc</code>) are stored in a standardized subdirectory named <code class="has-text-weight-bold">__pycache__</code>, which is located inside the directory of the original <code class="has-text-weight-bold">.py</code> file to speed up subsequent imports.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">Hashbang</code>: The <code class="has-text-weight-bold">#!</code> line in scripts, not a directory.</li>
+                        <li><code class="has-text-weight-bold">__init__</code>: The file that marks a directory as a Python package.</li>
+                        <li><code class="has-text-weight-bold">Mymodules</code>: An arbitrary, non-standard directory name.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The standardized directory name for the bytecode cache is <code class="has-text-weight-bold">__pycache__</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 12: Shebang Digraph
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The digraph written as <code class="has-text-weight-bold">#!</code> is used to:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">make a particular module entity private</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code class="is-size-6">tell a Unix or Unix-like OS how to execute the contents of a Python file</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">create a docstring</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">tell an MS Windows OS how to execute the contents of a Python file</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The <code class="has-text-weight-bold">#!</code> (Shebang or Hashbang) must be the first line of a script file on Unix-like operating systems (Linux/macOS). It specifies the path to the interpreter (e.g., <code class="has-text-weight-bold">#!/usr/bin/env python3</code>) that the operating system should use to execute the script.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>Privacy is indicated by underscores (<code class="has-text-weight-bold">_</code>).</li>
+                        <li>Docstrings are created with triple quotes (<code class="has-text-weight-bold">"""</code>).</li>
+                        <li>Windows uses file associations, not the Shebang, for execution.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: <code class="has-text-weight-bold">#!</code> is the Shebang used by Unix-like operating systems.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 13: PIP Dependency Command
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    A list of package dependencies can be obtained from <code class="has-text-weight-bold">pip</code> using a command named:
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">dir</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (B) <code class="is-size-6">show</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">list</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">deps</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The command <code class="has-text-weight-bold">pip show &lt;package_name&gt;</code> displays detailed information about a package, including its version, location, and the **"Requires"** field, which lists its dependencies.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">dir</code>: A Python built-in function, not a <code class="has-text-weight-bold">pip</code> command.</li>
+                        <li><code class="has-text-weight-bold">list</code>: Lists all installed packages, but not their dependency details.</li>
+                        <li><code class="has-text-weight-bold">deps</code>: Not a recognized standard <code class="has-text-weight-bold">pip</code> command.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: Detailed package information, including dependencies, is viewed with <code class="has-text-weight-bold">pip show</code>.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 14: PIP List Command
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    The <code class="has-text-weight-bold">pip list</code> command presents a list of:
+                </p>
+                <div class="box p-4">
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (A) <code class="is-size-6">locally installed packages</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">available pip commands</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">outdated local packages</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (D) <code class="is-size-6">all packages available at PyPI</code>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The <code class="has-text-weight-bold">pip list</code> command queries the active Python environment and displays a list of all packages that have been successfully installed in that environment.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>Available commands are shown by <code class="has-text-weight-bold">pip help</code>.</li>
+                        <li>Outdated packages are shown by <code class="has-text-weight-bold">pip list --outdated</code>.</li>
+                        <li>All packages at PyPI are searched using <code class="has-text-weight-bold">pip search</code> or a web browser.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: <code class="has-text-weight-bold">pip list</code> is used to view the list of installed packages in the local environment.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 15: PIP Search Command (Select two)
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is true about the <code class="has-text-weight-bold">pip search</code> command?
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (A) It searches only through package names.
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (B) The search is limited to locally installed packages.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (C) It searches through all PyPI packages.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (D) It needs a working Internet connection to work.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p><code class="has-text-weight-bold">pip search</code> queries the centralized **Python Package Index (PyPI)** database for available packages, which is an external online service, hence it **requires an internet connection**.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>It searches names, summaries, and keywords, not just names.</li>
+                        <li>It searches PyPI (external), not locally installed packages.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The command queries the online PyPI index, making both statements true.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 16: PIP Install Command (Select two)
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is true about the <code class="has-text-weight-bold">pip install</code> command?
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (A) It always installs the newest version of the package.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (B) It allows the user to install a specific version of the package.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="checkbox">
+                            <input type="checkbox" disabled>
+                            (C) It installs a package system-wide only when the <code class="has-text-weight-bold">--system</code> option is specified.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="checkbox has-text-weight-bold">
+                            <input type="checkbox" checked disabled>
+                            (D) It installs a package per user only when the <code class="has-text-weight-bold">--user</code> option is specified.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>You can specify a version using <code class="has-text-weight-bold">package==1.2.3</code>. When not in a virtual environment, the <code class="has-text-weight-bold">--user</code> flag is necessary to install packages into the current user's local directory instead of the system-wide Python directory.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>The version **can** be changed/specified.</li>
+                        <li><code class="has-text-weight-bold">--system</code> is not a standard option; system-wide installation is often the default without a virtual environment or <code class="has-text-weight-bold">--user</code> flag.</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: <code class="has-text-weight-bold">pip install</code> supports version specification and the <code class="has-text-weight-bold">--user</code> flag for local installation.</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 17: PIP Update Command
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    What is true about updating already installed Python packages?
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) It can be done only by uninstalling and installing the package again.
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) It's an automatic process, and the user cannot control it.
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) It can be done by reinstalling the package using the <code class="has-text-weight-bold">reinstall</code> command.
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) It's performed by the <code class="is-size-6">install</code> command accompanied by the <code class="is-size-6">-u</code> option.
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The correct and efficient way to update a package is to reuse the <code class="has-text-weight-bold">pip install</code> command along with the <code class="has-text-weight-bold">-U</code> (or <code class="has-text-weight-bold">--upgrade</code>) option: <code class="has-text-weight-bold">pip install -U &lt;package_name&gt;</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li>Uninstalling/reinstalling is unnecessarily complex.</li>
+                        <li>Updates are not automatic.</li>
+                        <li>There is no dedicated <code class="has-text-weight-bold">reinstall</code> command for updating (it's <code class="has-text-weight-bold">--force-reinstall</code> for reinstalling).</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: Updating is handled by <code class="has-text-weight-bold">pip install --upgrade</code> (or <code class="has-text-weight-bold">-u</code>).</p>
+            </div>
+        </div>
+        <div class="card question-card">
+            <header class="card-header is-correct-header">
+                <p class="card-header-title has-text-white is-size-5">
+                    Question 18: PIP Removal Command
+                </p>
+            </header>
+            <div class="card-content">
+                <p class="is-size-6 has-text-weight-semibold mb-3">
+                    Which command can you use <code class="has-text-weight-bold">pip</code> to remove an installed package?
+                </p>
+                <div class="box p-4">
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (A) <code class="is-size-6">pip remove package</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (B) <code class="is-size-6">pip install --uninstall package</code>
+                        </label>
+                    </div>
+                    <div class="field">
+                        <label class="radio">
+                            <input type="radio" disabled>
+                            (C) <code class="is-size-6">pip --uninstall package</code>
+                        </label>
+                    </div>
+                    <div class="field correct-option">
+                        <label class="radio has-text-weight-bold">
+                            <input type="radio" checked disabled>
+                            (D) <code class="is-size-6">pip uninstall package</code>
+                            <span class="tag is-success is-medium ml-3">✅ Correct</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="correct-explanation">
+                    <h5 class="title is-6 has-text-success">Explanation</h5>
+                    <p>The dedicated subcommand for removing installed Python packages from the environment is <code class="has-text-weight-bold">uninstall</code>: <code class="has-text-weight-bold">pip uninstall &lt;package_name&gt;</code>.</p>
+                </div>
+                <div class="incorrect-analysis">
+                    <h5 class="title is-6 has-text-danger">Analysis of Other Options</h5>
+                    <ul>
+                        <li><code class="has-text-weight-bold">remove</code> is not a valid <code class="has-text-weight-bold">pip</code> subcommand.</li>
+                        <li>The other options use incorrect syntax or inappropriate subcommands (<code class="has-text-weight-bold">install</code>).</li>
+                    </ul>
+                </div>
+                <p class="has-text-weight-semibold is-size-7 mt-3">Confirmation: The command for package removal is the explicit <code class="has-text-weight-bold">pip uninstall</code>.</p>
+            </div>
+        </div>
+        </div>
+</section>
+
+</body>
+</html>
